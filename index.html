@@ -40,7 +40,6 @@
       <span>Tiruchengode</span> | <span>Amravati</span>
     </div>
 </section>
-
   <!-- Features/Services -->
   <section class="section features-section" id="features">
     <div class="blob blob1">
@@ -198,6 +197,41 @@
           </table>
     </div>
 </section>
+
+  <!-- Price Calculator -->
+  <section class="section calculator-section" id="calculator">
+    <h2 class="section-title">Price Calculator</h2>
+    <div class="calculator-card">
+      <div class="calc-row">
+        <label>Depth (feet)
+          <input type="number" id="calc-depth" min="1" value="100">
+        </label>
+        <label>Pipe Type
+          <select id="calc-pipe">
+            <option value="none">None</option>
+            <option value="7">7" PVC — ₹450/ft</option>
+            <option value="10">10" PVC — ₹750/ft</option>
+          </select>
+        </label>
+        <label>Pipe Length (ft)
+          <input type="number" id="calc-pipe-length" min="0" value="0">
+        </label>
+      </div>
+      <div class="calc-row">
+        <label class="calc-check"><input type="checkbox" id="calc-bore-bata"> Include Bore Bata (₹2500)</label>
+        <label>Your name
+          <input type="text" id="calc-name" placeholder="Name">
+        </label>
+        <label>Phone
+          <input type="tel" id="calc-phone" placeholder="Phone">
+        </label>
+      </div>
+      <div id="calc-output" class="calc-output">Estimated: ₹0</div>
+      <div class="calculator-actions">
+        <button id="calc-calc-btn" class="call-btn">Calculate</button>
+      </div>
+    </div>
+  </section>
 
   <!-- Recent Success Stories -->
   <section class="section case-studies" id="success">
@@ -530,17 +564,6 @@
     </div>
   </section>
 
-  <!-- Emergency Service Widget -->
-  <div class="emergency-widget">
-    <div class="emergency-content">
-      <div class="emergency-icon">🚨</div>
-      <div class="emergency-text">
-        <strong>Emergency Service Available!</strong>
-        <span>Need urgent borewell repair? Call us 24/7</span>
-      </div>
-      <a href="tel:+919361446929" class="emergency-btn">Call Now</a>
-    </div>
-  </div>
 
   <!-- Quick Action Buttons (Floating) -->
   <div class="quick-actions">
@@ -605,6 +628,41 @@
 </section>
 
   <!-- Contact Form -->
+  <!-- Quick Service Request (moved above Contact Form) -->
+  <section class="section" id="quick-service">
+    <h2 class="section-title">Quick Service Request</h2>
+    <div class="calculator-card">
+      <form id="quick-service-form">
+        <div class="calc-row">
+          <label>Your name
+            <input type="text" id="qs-name" name="name" placeholder="Name" required>
+          </label>
+          <label>Location
+            <input type="text" id="qs-location" name="location" placeholder="Town / Village" required>
+          </label>
+          <label>Phone
+            <input type="tel" id="qs-phone" name="phone" placeholder="Phone" required>
+          </label>
+        </div>
+        <div class="calc-row">
+          <label>Service Type
+            <select id="qs-reason" name="reason" required>
+              <option value="Repair">Urgent Repair</option>
+              <option value="Installation">New Installation</option>
+              <option value="Maintenance">Maintenance</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label style="min-width:360px">Details (optional)
+            <input type="text" id="qs-details" name="details" placeholder="Short description">
+          </label>
+        </div>
+        <div style="margin-top:0.5rem; display:flex; gap:1rem; justify-content:center;">
+          <button type="submit" class="call-btn">Request Quick Service</button>
+        </div>
+      </form>
+    </div>
+  </section>
   <section class="section" id="contact">
     <h2 class="section-title">Drop a Line</h2>
     <form id="contactForm" class="contact-form" action="https://formspree.io/f/xjkrlbdw" method="POST">
@@ -1296,6 +1354,113 @@
       }
     });
   </script>
+  <!-- Quick Quote Modal -->
+  <div id="quick-response-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span id="quick-response-close" class="modal-close">&times;</span>
+      <h3 id="quick-response-title">Quote Requested</h3>
+      <p id="quick-response-text">We'll contact you shortly. Our team will call or message you within a few minutes.</p>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Pricing tiers (rate per foot)
+    function getRate(feet) {
+      feet = Number(feet) || 0;
+      if (feet <= 300) return 100;
+      if (feet <= 400) return 110;
+      if (feet <= 500) return 120;
+      if (feet <= 600) return 140;
+      if (feet <= 700) return 170;
+      if (feet <= 800) return 210;
+      if (feet <= 900) return 260;
+      if (feet <= 1000) return 320;
+      if (feet <= 1100) return 420;
+      if (feet <= 1200) return 520;
+      if (feet <= 1300) return 620;
+      if (feet <= 1400) return 720;
+      return 820; // up to 1500+ fallback
+    }
+
+    function formatINR(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+
+    function computeEstimate() {
+      const depth = Number(document.getElementById('calc-depth').value) || 0;
+      const pipeType = document.getElementById('calc-pipe').value;
+      const pipeLength = Number(document.getElementById('calc-pipe-length').value) || 0;
+      const boreBata = document.getElementById('calc-bore-bata').checked;
+
+      const rate = getRate(depth);
+      const drillingCost = depth * rate;
+      let pipeRate = 0;
+      if (pipeType === '7') pipeRate = 450;
+      if (pipeType === '10') pipeRate = 750;
+      const pipeCost = pipeRate * pipeLength;
+      const bata = boreBata ? 2500 : 0;
+      const total = drillingCost + pipeCost + bata;
+
+      const breakdown = `Estimate: ${formatINR(total)} (Drilling: ${formatINR(drillingCost)} @ ${formatINR(rate)}/ft` +
+        `${pipeRate ? ', Pipe: '+formatINR(pipeCost)+' ('+pipeRate+'/ft)' : ''}` +
+        `${boreBata ? ', Bore Bata: '+formatINR(bata) : ''})`;
+
+      document.getElementById('calc-output').textContent = breakdown;
+      return { total, drillingCost, pipeCost, bata, rate, depth, pipeType, pipeLength };
+    }
+
+    document.getElementById('calc-calc-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      computeEstimate();
+    });
+
+    // Quick Service form submission (under FAQ)
+    const qsForm = document.getElementById('quick-service-form');
+    if (qsForm) {
+      qsForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const name = document.getElementById('qs-name').value || 'No name';
+        const location = document.getElementById('qs-location').value || 'No location';
+        const phone = document.getElementById('qs-phone').value || 'No phone';
+        const reason = document.getElementById('qs-reason').value || 'Not specified';
+        const details = document.getElementById('qs-details').value || '';
+
+        const message = `Quick Service Request\nName: ${name}\nPhone: ${phone}\nLocation: ${location}\nService Type: ${reason}\nDetails: ${details}`;
+
+        // Show quick-response modal
+        const modal = document.getElementById('quick-response-modal');
+        const modalText = document.getElementById('quick-response-text');
+        modalText.textContent = 'Thanks, ' + (name !== 'No name' ? name : '') + '. We received your request and will contact you shortly.';
+        modal.classList.add('active');
+
+        // Auto-close modal after 3 seconds
+        setTimeout(() => {
+          modal.classList.remove('active');
+        }, 3000);
+
+        // Send to Formspree for record
+        try {
+          const data = new FormData();
+          data.append('name', name);
+          data.append('phone', phone);
+          data.append('message', message);
+          await fetch('https://formspree.io/f/maqbrgvl', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        } catch (err) {
+          console.warn('Quick service submit failed', err);
+        }
+        // Optionally reset form
+        qsForm.reset();
+      });
+    }
+
+    // Modal close
+    document.getElementById('quick-response-close').addEventListener('click', function() {
+      document.getElementById('quick-response-modal').classList.remove('active');
+    });
+    document.getElementById('quick-response-modal').addEventListener('click', function(e){
+      if (e.target === this) this.classList.remove('active');
+    });
+  });
+  </script>
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     // List all images for At Work
@@ -1502,20 +1667,6 @@
     document.querySelectorAll('.counter, .years-number, .progress-fill').forEach(function(el) {
       observer.observe(el);
     });
-
-    // Emergency Widget - Show after scrolling down
-    const emergencyWidget = document.querySelector('.emergency-widget');
-    if (emergencyWidget) {
-      let scrollTimeout;
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 500) {
-          emergencyWidget.classList.add('show');
-        } else {
-          emergencyWidget.classList.remove('show');
-        }
-      });
-    }
-
     // Add smooth scroll to all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {

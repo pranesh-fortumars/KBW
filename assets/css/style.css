@@ -15,6 +15,228 @@ body {
   padding-top: 64px !important;
 }
 
+/* Quick Service & Contact — polished, compact form UI */
+/* Card styling for the form container */
+.calculator-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid #ecf7ee;
+  box-shadow: 0 8px 20px rgba(16,136,53,0.06);
+}
+
+/* Grid rows used in the quick-service form */
+#quick-service .calc-row,
+#contact .contact-form,
+.calculator-card .calc-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Form group label above control */
+#quick-service .calc-row label,
+#contact label,
+.calculator-card label {
+  display: block;
+  font-weight: 700;
+  color: #12311a;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Controls: roomy, rounded, subtle shadow */
+#quick-service input,
+#quick-service select,
+#quick-service textarea,
+#contact input,
+#contact select,
+#contact textarea,
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 16px;
+  height: 52px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #e6efe9;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(16,136,53,0.06);
+  transition: box-shadow 0.18s ease, transform 0.12s ease, border-color 0.12s ease;
+  color: var(--dark);
+  box-sizing: border-box;
+}
+
+/* Select sizing matches inputs */
+#quick-service select,
+#contact select {
+  height: 52px;
+  padding-right: 32px;
+}
+
+/* Textarea expands vertically */
+#quick-service textarea,
+#contact textarea {
+  min-height: 88px;
+  height: auto;
+  padding: 12px 14px;
+}
+
+/* Placeholder and subtle text colors */
+#quick-service input::placeholder,
+#contact input::placeholder,
+#quick-service textarea::placeholder,
+#contact textarea::placeholder {
+  color: #9aa0a0;
+}
+
+/* Focus state: green glow */
+#quick-service input:focus,
+#quick-service select:focus,
+#quick-service textarea:focus,
+#contact input:focus,
+#contact select:focus,
+#contact textarea:focus {
+  outline: none
+  border-color: var(--primary);
+  box-shadow: 0 0 0 6px rgba(30,219,77,0.06);
+  transform: translateY(-1px);
+}
+
+/* Tighter spacing for the small action row */
+#quick-service .calc-row + div,
+.calculator-card .calculator-actions {
+  margin-top: 0.5rem;
+}
+
+/* Responsive: 2 columns on medium, 1 on small screens */
+@media (max-width: 900px) {
+  #quick-service .calc-row,
+  #contact .contact-form,
+  .calculator-card .calc-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  #quick-service .calc-row,
+  #contact .contact-form,
+  .calculator-card .calc-row {
+    grid-template-columns: 1fr;
+  }
+  #quick-service input,
+  #contact input,
+  .form-row input {
+    height: 48px;
+    font-size: 15px;
+  }
+}
+
+/* Contact: polished "Drop a Line" card and large gradient send button */
+#contact .section-title {
+  color: #6C47FF;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 480px;
+  margin: 2rem auto 2.5rem auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f4f2;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100% !important;
+  padding: 16px 18px;
+  border-radius: 10px;
+  border: 1px solid #e0e6e3;
+  background: #fff;
+  box-shadow: none;
+  font-size: 15px;
+  color: var(--dark);
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e0a3d4;
+  box-shadow: 0 0 0 4px rgba(224, 163, 212, 0.1);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: block;
+}
+
+/* Placeholder colors */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+/* Large gradient send button */
+.contact-form .call-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  border-radius: 32px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(90deg, #ff5ca8 0%, #7a47ff 100%);
+  box-shadow: 0 12px 30px rgba(122, 71, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(122, 71, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .contact-form {
+    max-width: 520px;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-form {
+    max-width: 100%;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+  .contact-form .call-btn {
+    padding: 14px 40px;
+    font-size: 15px;
+  }
+}
+
 .navbar {
   position: fixed !important;
   top: 0 !important;
@@ -1585,65 +1807,6 @@ body {
   background: #888; /* Moderate - Gray */
 }
 
-/* Emergency Widget */
-.emergency-widget {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  z-index: 1000;
-  max-width: 320px;
-  background: linear-gradient(135deg, #ff4444 0%, #ff6b6b 100%);
-  border-radius: 16px;
-  padding: 1rem;
-  box-shadow: 0 8px 32px rgba(255,68,68,0.4);
-  animation: pulse-emergency 2s ease-in-out infinite;
-  display: none;
-}
-.emergency-widget.show {
-  display: block;
-}
-@keyframes pulse-emergency {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-.emergency-content {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: #fff;
-}
-.emergency-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-.emergency-text {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.emergency-text strong {
-  font-size: 1rem;
-  font-weight: 800;
-  margin-bottom: 0.2rem;
-}
-.emergency-text span {
-  font-size: 0.85rem;
-  opacity: 0.95;
-}
-.emergency-btn {
-  background: #fff;
-  color: #ff4444;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform 0.2s;
-  white-space: nowrap;
-}
-.emergency-btn:hover {
-  transform: scale(1.05);
-}
-
 /* Quick Action Buttons (Floating) */
 .quick-actions {
   position: fixed;
@@ -1689,12 +1852,6 @@ body {
   .seasonal-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  .emergency-widget {
-    bottom: 90px;
-    right: 10px;
-    max-width: 280px;
-    padding: 0.8rem;
-  }
   .quick-actions {
     bottom: 15px;
     right: 15px;
@@ -1722,19 +1879,66 @@ body {
   .why-card, .season-card {
     padding: 1.5rem;
   }
-  .emergency-widget {
-    bottom: 80px;
-    right: 10px;
-    max-width: calc(100vw - 20px);
-  }
-  .emergency-content {
-    flex-wrap: wrap;
-  }
-  .emergency-btn {
-    width: 100%;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
+  
+}
+
+/* Price Calculator styles */
+.calculator-section { text-align: center; padding: 1.5rem 1rem 2.5rem 1rem; }
+.calculator-card {
+  background: linear-gradient(180deg,#ffffff 0%, #f7fff7 100%);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #e6f8ec;
+  box-shadow: 0 14px 40px rgba(5,35,18,0.06);
+  display: block;
+}
+.calculator-card .calc-title { font-size: 1.15rem; font-weight: 800; color: #0c3e1b; margin-bottom: 0.75rem; }
+.calculator-card .calc-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+.calculator-card label { display: flex; flex-direction: column; font-weight: 600; color: #1d2a22; }
+.calculator-card input[type="number"], .calculator-card input[type="text"], .calculator-card input[type="tel"], .calculator-card select {
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #e6f4ea;
+  font-size: 1rem;
+  height: 44px;
+  box-shadow: 0 2px 8px rgba(8, 80, 36, 0.03);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.08s;
+}
+.calculator-card input:focus, .calculator-card select:focus, .calculator-card textarea:focus {
+  outline: none;
+  border-color: #19e34a;
+  box-shadow: 0 6px 20px rgba(25,227,74,0.08);
+  transform: translateY(-1px);
+}
+.calc-check { align-items: center; flex-direction: row; gap: 0.5rem; font-weight: 700; }
+.calc-output { font-size: 1.2rem; font-weight: 800; color: #0c3e1b; margin-top: 0.6rem; background: #f1fff6; padding: 0.6rem 0.9rem; border-radius: 10px; display: inline-block; border: 1px solid #e6f8ec; }
+.calculator-actions { display:flex; gap:1rem; justify-content:center; margin-top:0.75rem; }
+.calculator-actions .call-btn { min-width: 160px; padding: 0.9rem 1.4rem; font-weight:800; }
+
+/* Quick Quote modal */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 3000; align-items: center; justify-content: center; }
+.modal.active { display: flex; }
+.modal-content { background: #fff; padding: 1.5rem 1.75rem; border-radius: 12px; max-width: 520px; width: 92%; text-align: center; box-shadow: 0 18px 60px rgba(6,38,18,0.14); border-left: 6px solid #19e34a; position: relative; }
+.modal-content h3 { margin-top: 0; color: #0c3e1b; }
+.modal-content p { margin: 0.5rem 0 0 0; color: #33493a; }
+.modal-close { position: absolute; top: 10px; right: 12px; font-size: 1.6rem; cursor: pointer; color: #666; }
+.modal-success-icon { font-size: 2.2rem; margin-bottom: 0.35rem; display: block; }
+
+@media (max-width: 900px) {
+  .calculator-card .calc-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .calculator-card .calc-row { grid-template-columns: 1fr; }
+  .calculator-card label { width: 100%; }
+  .calculator-actions { flex-direction: column; }
+  .calculator-actions .call-btn { width: 100%; }
 }
 
 /* --- Modern Timeline Styles --- */
