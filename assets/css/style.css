@@ -2418,3 +2418,56 @@ button.call-btn:hover,
   transform: scale(1.1) rotate(15deg);
   background: var(--glass-bg);
 }
+
+/* Custom Cursor */
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+.cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cursor.active {
+  transform: translate(-50%, -50%) scale(3);
+  background: var(--accent);
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.cursor-follower.active {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+/* 3D Tilt Card Base */
+.case-card, .why-card, .feature-item, .season-card {
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Exclude transform for JS control */
+  will-change: transform;
+}
+
+/* Magnetic Button Base */
+.call-btn, .newsletter-btn {
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Exclude transform */
+  will-change: transform;
+}
