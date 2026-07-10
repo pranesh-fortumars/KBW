@@ -9,6 +9,8 @@ import Finance from './pages/Finance.tsx';
 import Inventory from './pages/Inventory.tsx';
 import HR from './pages/HR.tsx';
 import Settings from './pages/Settings.tsx';
+import Media from './pages/Media.tsx';
+import OnlineBooking from './pages/OnlineBooking.tsx';
 
 import PortalLayout from './layouts/PortalLayout.tsx';
 import PortalDashboard from './pages/PortalDashboard.tsx';
@@ -18,6 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/book" element={<OnlineBooking />} />
         
         {/* Customer Portal Routes (Completely separate from Admin) */}
         <Route path="/portal" element={<PortalLayout />}>
@@ -34,6 +37,7 @@ function App() {
           <Route path="inventory" element={<Inventory />} />
           <Route path="hr" element={<HR />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="media" element={<Media />} />
         </Route>
       </Routes>
     </Router>

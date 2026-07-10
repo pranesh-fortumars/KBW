@@ -37,6 +37,10 @@ export default function DashboardLayout() {
           <Link to="/admin/finance" className="flex items-center gap-3 px-4 py-3 hover:bg-slate-800 rounded-lg text-slate-300 hover:text-white transition-colors">
             <IndianRupee size={20} /> Finance
           </Link>
+          <Link to="/admin/media" className="flex items-center gap-3 px-4 py-3 hover:bg-slate-800 rounded-lg text-slate-300 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            Media
+          </Link>
         </nav>
         <div className="p-4 border-t border-slate-800">
           <Link to="/admin/settings" className="flex items-center gap-3 px-4 py-2 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-white transition-colors">
