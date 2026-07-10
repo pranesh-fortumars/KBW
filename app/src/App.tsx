@@ -4,6 +4,9 @@ import DashboardLayout from './layouts/DashboardLayout.tsx';
 import DashboardHome from './pages/DashboardHome.tsx';
 import CRM from './pages/CRM.tsx';
 import Fleet from './pages/Fleet.tsx';
+import Projects from './pages/Projects.tsx';
+import Finance from './pages/Finance.tsx';
+import Inventory from './pages/Inventory.tsx';
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
           <Route index element={<DashboardHome />} />
           <Route path="crm" element={<CRM />} />
           <Route path="fleet" element={<Fleet />} />
-          {/* We will add Projects, Finance, Inventory here */}
+          <Route path="projects" element={<Projects />} />
+          <Route path="finance" element={<Finance />} />
+          <Route path="inventory" element={<Inventory />} />
         </Route>
       </Routes>
     </Router>
