@@ -75,5 +75,26 @@ The architecture is 100% structured and prepared for a seamless "plug-and-play" 
    ```
 4. Open your browser and go to `http://localhost:5173`.
 
+## 🔮 Future Roadmap (Firebase Migration)
+While the current application is purely frontend-driven, the data structures are designed to mirror a NoSQL document database. 
+To transition to a live backend:
+1. Initialize Firebase inside the project (`firebase init`).
+2. Swap the frontend `mockData` arrays inside the React components with Firebase Firestore subscriptions (`onSnapshot`).
+3. Implement Firebase Authentication to secure the `/admin` routes.
+4. Connect the Media Upload interface to Firebase Storage.
+
+## ⚙️ Environment Configuration
+No strict `.env` configuration is required to run the local mockup. However, when migrating to production, create a `.env` file in the `app` root:
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_API_URL=production_url
+```
+
+## 🤝 Development & Contribution Guidelines
+- **Component Architecture:** Reusable components (Buttons, Cards, Inputs) should be placed in `src/components/`. 
+- **Icons:** We rely strictly on `lucide-react` for SVG icons to maintain uniform weight and size.
+- **Styling:** Avoid inline styles. Use Tailwind CSS utility classes. For complex gradients, use the globally defined `.btn-gradient` and `.text-gradient` classes from `index.css`.
+
 ---
 *Built with precision to scale Karpagam Borewells for the next 40 years.*
