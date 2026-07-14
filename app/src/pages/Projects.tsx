@@ -8,7 +8,7 @@ const mockProjects = [
 
 export default function Projects() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in-up">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">Live Project Tracking</h2>
         <button className="btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
@@ -18,7 +18,7 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {mockProjects.map(project => (
-          <div key={project.id} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden">
+          <div key={project.id} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gray-100">
               <div className="h-full bg-[#19d219]" style={{ width: `${project.progress}%` }}></div>
             </div>

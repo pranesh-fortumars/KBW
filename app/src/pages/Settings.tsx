@@ -2,7 +2,7 @@ import { Shield, Key, Building2 } from 'lucide-react';
 
 export default function Settings() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in-up">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">System Settings & Access</h2>
         <button className="btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">

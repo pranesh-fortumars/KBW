@@ -51,7 +51,7 @@ export default function PortalDashboard() {
         </div>
 
         {/* Actions & Docs */}
-        <div className="space-y-6">
+        <div className="space-y-6 animate-fade-in-up">
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-lg font-bold text-gray-800 mb-4">Latest Documents</h3>
             <div className="space-y-3">

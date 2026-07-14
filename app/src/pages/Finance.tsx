@@ -19,7 +19,7 @@ export default function Finance() {
   const estimatedCost = (depth * drillingRate) + (casing * casingRate) + transport;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in-up">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">Finance & Quotations</h2>
       </div>

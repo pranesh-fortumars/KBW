@@ -7,7 +7,7 @@ import {
 
 export default function DashboardHome() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in-up">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <KpiCard title="Total Leads" value="142" icon={<Users className="text-blue-500" />} trend="+12%" />
         <KpiCard title="Active Projects" value="8" icon={<TrendingUp className="text-[#19d219]" />} trend="+2" />

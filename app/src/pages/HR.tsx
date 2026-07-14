@@ -9,7 +9,7 @@ const mockEmployees = [
 
 export default function HR() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in-up">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">HR & Employee Management</h2>
         <button className="btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
@@ -18,28 +18,28 @@ export default function HR() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
+        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center justify-between">
           <div>
             <p className="text-sm text-gray-500 font-medium">Total Staff</p>
             <p className="text-3xl font-bold text-gray-900 mt-1">42</p>
           </div>
           <div className="p-3 bg-blue-50 text-blue-600 rounded-lg"><Users size={24} /></div>
         </div>
-        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
+        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center justify-between">
           <div>
             <p className="text-sm text-gray-500 font-medium">Present Today</p>
             <p className="text-3xl font-bold text-[#15b515] mt-1">38</p>
           </div>
           <div className="p-3 bg-[#19d219]/10 text-[#15b515] rounded-lg"><UserCheck size={24} /></div>
         </div>
-        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
+        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center justify-between">
           <div>
             <p className="text-sm text-gray-500 font-medium">On Leave</p>
             <p className="text-3xl font-bold text-orange-600 mt-1">4</p>
           </div>
           <div className="p-3 bg-orange-50 text-orange-600 rounded-lg"><CalendarDays size={24} /></div>
         </div>
-        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
+        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center justify-between">
           <div>
             <p className="text-sm text-gray-500 font-medium">Monthly Payroll</p>
             <p className="text-2xl font-bold text-indigo-600 mt-1">₹ 8.2L</p>
