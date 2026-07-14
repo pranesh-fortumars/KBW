@@ -19,7 +19,7 @@ export default function CRM() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">CRM & Lead Management</h2>
-        <button className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        <button className="flex items-center gap-2 btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
           <Plus size={18} /> New Lead
         </button>
       </div>
@@ -35,7 +35,7 @@ export default function CRM() {
           <div><p className="text-sm text-gray-500 font-medium">Follow-ups Today</p><p className="text-2xl font-bold">8</p></div>
         </div>
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">
-          <div className="p-3 bg-emerald-50 text-emerald-600 rounded-lg"><CheckCircle2 size={24} /></div>
+          <div className="p-3 bg-[#19d219]/10 text-[#15b515] rounded-lg"><CheckCircle2 size={24} /></div>
           <div><p className="text-sm text-gray-500 font-medium">Converted (This Month)</p><p className="text-2xl font-bold">42</p></div>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function CRM() {
             <input 
               type="text" 
               placeholder="Search leads..." 
-              className="pl-9 pr-4 py-2 border rounded-lg text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+              className="pl-9 pr-4 py-2 border rounded-lg text-sm focus:outline-none focus:border-[#19d219] focus:ring-1 focus:ring-[var(--brand-pink)]"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />

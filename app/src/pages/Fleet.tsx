@@ -11,7 +11,7 @@ export default function Fleet() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">Fleet & Machine Management</h2>
-        <button className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        <button className="flex items-center gap-2 btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
           Add Machine
         </button>
       </div>
@@ -22,7 +22,7 @@ export default function Fleet() {
           <div><p className="text-sm text-gray-500 font-medium">Total Fleet</p><p className="text-2xl font-bold">12</p></div>
         </div>
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">
-          <div className="p-3 bg-emerald-50 text-emerald-600 rounded-lg"><Navigation size={24} /></div>
+          <div className="p-3 bg-[#19d219]/10 text-[#15b515] rounded-lg"><Navigation size={24} /></div>
           <div><p className="text-sm text-gray-500 font-medium">Active (Drilling)</p><p className="text-2xl font-bold">4</p></div>
         </div>
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">

@@ -12,7 +12,7 @@ export default function HR() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">HR & Employee Management</h2>
-        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        <button className="btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
           Add Employee
         </button>
       </div>
@@ -28,9 +28,9 @@ export default function HR() {
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-sm text-gray-500 font-medium">Present Today</p>
-            <p className="text-3xl font-bold text-emerald-600 mt-1">38</p>
+            <p className="text-3xl font-bold text-[#15b515] mt-1">38</p>
           </div>
-          <div className="p-3 bg-emerald-50 text-emerald-600 rounded-lg"><UserCheck size={24} /></div>
+          <div className="p-3 bg-[#19d219]/10 text-[#15b515] rounded-lg"><UserCheck size={24} /></div>
         </div>
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
           <div>

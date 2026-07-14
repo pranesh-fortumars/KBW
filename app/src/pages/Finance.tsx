@@ -28,7 +28,7 @@ export default function Finance() {
         {/* Quotation Engine */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <div className="flex items-center gap-3 mb-6">
-            <Calculator className="text-emerald-500" size={24} />
+            <Calculator className="text-[#19d219]" size={24} />
             <h3 className="text-lg font-bold text-gray-800">Quotation Engine</h3>
           </div>
           
@@ -39,7 +39,7 @@ export default function Finance() {
                 type="number" 
                 value={depth}
                 onChange={(e) => setDepth(Number(e.target.value))}
-                className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+                className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-[var(--brand-pink)] outline-none"
               />
               <p className="text-xs text-gray-500 mt-1">Rate: ₹{drillingRate}/ft</p>
             </div>
@@ -50,7 +50,7 @@ export default function Finance() {
                 type="number" 
                 value={casing}
                 onChange={(e) => setCasing(Number(e.target.value))}
-                className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+                className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-[var(--brand-pink)] outline-none"
               />
               <p className="text-xs text-gray-500 mt-1">Rate: ₹{casingRate}/ft (6.5" PVC)</p>
             </div>
@@ -70,7 +70,7 @@ export default function Finance() {
               </div>
               <div className="flex justify-between text-lg font-bold text-gray-800 border-t pt-2 mt-2">
                 <span>Total Estimate:</span>
-                <span className="text-emerald-600">₹ {estimatedCost.toLocaleString()}</span>
+                <span className="text-[#15b515]">₹ {estimatedCost.toLocaleString()}</span>
               </div>
             </div>
 
@@ -87,7 +87,7 @@ export default function Finance() {
               <IndianRupee className="text-blue-500" size={24} />
               <h3 className="text-lg font-bold text-gray-800">Recent Invoices</h3>
             </div>
-            <button className="text-sm font-medium text-emerald-600 hover:text-emerald-700">View All</button>
+            <button className="text-sm font-medium text-[#15b515] hover:text-emerald-700">View All</button>
           </div>
 
           <div className="space-y-4">
@@ -108,7 +108,7 @@ export default function Finance() {
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="font-bold text-gray-800">{inv.amount}</span>
-                  <button className="text-gray-400 hover:text-emerald-600 transition-colors">
+                  <button className="text-gray-400 hover:text-[#15b515] transition-colors">
                     <Download size={18} />
                   </button>
                 </div>

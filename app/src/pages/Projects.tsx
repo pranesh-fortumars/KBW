@@ -11,7 +11,7 @@ export default function Projects() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">Live Project Tracking</h2>
-        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        <button className="btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
           Create Project
         </button>
       </div>
@@ -20,12 +20,12 @@ export default function Projects() {
         {mockProjects.map(project => (
           <div key={project.id} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gray-100">
-              <div className="h-full bg-emerald-500" style={{ width: `${project.progress}%` }}></div>
+              <div className="h-full bg-[#19d219]" style={{ width: `${project.progress}%` }}></div>
             </div>
             
             <div className="flex justify-between items-start mt-2">
               <div>
-                <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">{project.id}</span>
+                <span className="text-xs font-bold text-[#15b515] bg-[#19d219]/10 px-2 py-1 rounded">{project.id}</span>
                 <h3 className="text-lg font-bold text-gray-800 mt-2">{project.customer}</h3>
               </div>
               <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-bold">{project.status}</span>
@@ -50,7 +50,7 @@ export default function Projects() {
               <button className="flex-1 bg-gray-50 hover:bg-gray-100 text-gray-700 py-2 rounded-lg text-sm font-medium transition-colors border border-gray-200">
                 View Logs
               </button>
-              <button className="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 py-2 rounded-lg text-sm font-medium transition-colors border border-emerald-200">
+              <button className="flex-1 bg-[#19d219]/10 hover:bg-emerald-100 text-emerald-700 py-2 rounded-lg text-sm font-medium transition-colors border border-emerald-200">
                 Update Status
               </button>
             </div>

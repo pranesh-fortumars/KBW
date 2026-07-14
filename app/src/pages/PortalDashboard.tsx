@@ -9,7 +9,7 @@ export default function PortalDashboard() {
           <h2 className="text-3xl font-bold text-gray-800">Welcome back, Rajesh!</h2>
           <p className="text-gray-500 mt-2">Here is the latest status of your borewell project at Tiruchengode.</p>
         </div>
-        <div className="bg-emerald-50 text-emerald-700 px-6 py-4 rounded-xl text-center border border-emerald-100">
+        <div className="bg-[#19d219]/10 text-emerald-700 px-6 py-4 rounded-xl text-center border border-emerald-100">
           <p className="text-sm font-bold uppercase tracking-wider">Project Status</p>
           <p className="text-2xl font-black mt-1">Drilling Started</p>
         </div>
@@ -19,21 +19,21 @@ export default function PortalDashboard() {
         {/* Project Tracker */}
         <div className="md:col-span-2 bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
           <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-            <MapPin className="text-emerald-500" /> Project Timeline
+            <MapPin className="text-[#19d219]" /> Project Timeline
           </h3>
-          <div className="relative border-l-2 border-emerald-500 ml-3 space-y-8 pb-4">
+          <div className="relative border-l-2 border-[#19d219] ml-3 space-y-8 pb-4">
             <div className="relative pl-6">
-              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1"></div>
+              <div className="absolute w-4 h-4 bg-[#19d219] rounded-full -left-[9px] top-1"></div>
               <p className="font-bold text-gray-800">Site Inspection Completed</p>
               <p className="text-sm text-gray-500">Geologist verified water point on July 10, 2026.</p>
             </div>
             <div className="relative pl-6">
-              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1"></div>
+              <div className="absolute w-4 h-4 bg-[#19d219] rounded-full -left-[9px] top-1"></div>
               <p className="font-bold text-gray-800">Quotation Approved</p>
               <p className="text-sm text-gray-500">Estimate accepted. Advance payment received.</p>
             </div>
             <div className="relative pl-6">
-              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 animate-pulse shadow-[0_0_0_4px_rgba(16,185,129,0.2)]"></div>
+              <div className="absolute w-4 h-4 bg-[#19d219] rounded-full -left-[9px] top-1 animate-pulse shadow-[0_0_0_4px_rgba(16,185,129,0.2)]"></div>
               <p className="font-bold text-gray-800">Machine Assigned & Drilling</p>
               <p className="text-sm text-gray-500">Rig R01 has arrived at the site. Current depth: 250ft.</p>
             </div>
@@ -55,15 +55,15 @@ export default function PortalDashboard() {
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-lg font-bold text-gray-800 mb-4">Latest Documents</h3>
             <div className="space-y-3">
-              <a href="#" className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-emerald-300 hover:bg-emerald-50 transition-colors group">
-                <FileText className="text-gray-400 group-hover:text-emerald-600" />
+              <a href="#" className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-emerald-300 hover:bg-[#19d219]/10 transition-colors group">
+                <FileText className="text-gray-400 group-hover:text-[#15b515]" />
                 <div className="flex-1">
                   <p className="text-sm font-bold text-gray-800">Estimate Quotation</p>
                   <p className="text-xs text-gray-500">EST-1092.pdf</p>
                 </div>
               </a>
-              <a href="#" className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-emerald-300 hover:bg-emerald-50 transition-colors group">
-                <FileSignature className="text-gray-400 group-hover:text-emerald-600" />
+              <a href="#" className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-emerald-300 hover:bg-[#19d219]/10 transition-colors group">
+                <FileSignature className="text-gray-400 group-hover:text-[#15b515]" />
                 <div className="flex-1">
                   <p className="text-sm font-bold text-gray-800">Site Survey Report</p>
                   <p className="text-xs text-gray-500">GEO-SURVEY.pdf</p>
@@ -74,9 +74,9 @@ export default function PortalDashboard() {
 
           <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 shadow-lg text-white">
             <h3 className="text-lg font-bold mb-2">Pending Dues</h3>
-            <p className="text-3xl font-black text-emerald-400">₹ 85,000</p>
+            <p className="text-3xl font-black text-[#19d219]">₹ 85,000</p>
             <p className="text-xs text-slate-400 mt-1 mb-6">Invoice INV-26001 (Advance)</p>
-            <button className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-3 rounded-xl flex justify-center items-center gap-2 transition-colors">
+            <button className="w-full bg-[#19d219] hover:bg-emerald-400 text-white font-bold py-3 rounded-xl flex justify-center items-center gap-2 transition-colors">
               <CreditCard size={18} /> Pay Now Online
             </button>
           </div>

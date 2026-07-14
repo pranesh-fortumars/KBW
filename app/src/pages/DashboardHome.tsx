@@ -10,7 +10,7 @@ export default function DashboardHome() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <KpiCard title="Total Leads" value="142" icon={<Users className="text-blue-500" />} trend="+12%" />
-        <KpiCard title="Active Projects" value="8" icon={<TrendingUp className="text-emerald-500" />} trend="+2" />
+        <KpiCard title="Active Projects" value="8" icon={<TrendingUp className="text-[#19d219]" />} trend="+2" />
         <KpiCard title="Active Rigs" value="3/4" icon={<Truck className="text-purple-500" />} trend="75% Utilized" />
         <KpiCard title="Pending Maintenance" value="2" icon={<AlertCircle className="text-orange-500" />} trend="Due this week" />
       </div>
@@ -40,14 +40,14 @@ export default function DashboardHome() {
           <h3 className="text-lg font-bold text-gray-800 mb-4">Live Project Status</h3>
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+              <div className="w-2 h-2 rounded-full bg-[#19d219] animate-pulse"></div>
               <div className="flex-1">
                 <p className="font-semibold text-gray-800">Site A - Salem Textile Park</p>
                 <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-                  <div className="bg-emerald-500 h-2 rounded-full" style={{ width: '70%' }}></div>
+                  <div className="bg-[#19d219] h-2 rounded-full" style={{ width: '70%' }}></div>
                 </div>
               </div>
-              <span className="text-sm text-emerald-600 font-bold">Drilling</span>
+              <span className="text-sm text-[#15b515] font-bold">Drilling</span>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ function KpiCard({ title, value, icon, trend }: { title: string, value: string, 
       <div>
         <p className="text-sm font-medium text-gray-500">{title}</p>
         <p className="text-3xl font-bold text-gray-900 mt-2">{value}</p>
-        <p className="text-sm font-medium text-emerald-600 mt-2">{trend}</p>
+        <p className="text-sm font-medium text-[#15b515] mt-2">{trend}</p>
       </div>
       <div className="p-4 bg-gray-50 rounded-lg">
         {icon}

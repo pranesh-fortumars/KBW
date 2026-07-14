@@ -12,7 +12,7 @@ export default function Media() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">Media & Document Management</h2>
-        <button className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        <button className="flex items-center gap-2 btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
           <UploadCloud size={18} /> Upload Files
         </button>
       </div>
@@ -45,7 +45,7 @@ export default function Media() {
         <div className="flex justify-between items-center mb-6">
           <h3 className="font-semibold text-gray-700">Recent Uploads</h3>
           <div className="flex gap-2">
-            <select className="border rounded-lg px-3 py-1.5 text-sm outline-none focus:border-emerald-500 text-gray-600">
+            <select className="border rounded-lg px-3 py-1.5 text-sm outline-none focus:border-[#19d219] text-gray-600">
               <option>All Types</option>
               <option>Images</option>
               <option>Videos</option>
@@ -71,7 +71,7 @@ export default function Media() {
                 <p className="text-sm font-bold text-gray-800 truncate" title={media.title}>{media.title}</p>
                 <div className="flex justify-between items-center mt-1">
                   <p className="text-xs text-gray-500">{media.date}</p>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">{media.type}</span>
+                  <span className="text-[10px] uppercase font-bold text-[#15b515] bg-[#19d219]/10 px-2 py-0.5 rounded">{media.type}</span>
                 </div>
               </div>
             </div>

@@ -13,7 +13,7 @@ export default function Inventory() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">Inventory & Stock</h2>
-        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+        <button className="btn-gradient px-4 py-2 rounded-lg font-medium transition-colors">
           Add Stock
         </button>
       </div>
@@ -36,10 +36,10 @@ export default function Inventory() {
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-sm text-gray-500 font-medium">Stock Value</p>
-            <p className="text-3xl font-bold text-emerald-600 mt-1">₹ 8.5L</p>
+            <p className="text-3xl font-bold text-[#15b515] mt-1">₹ 8.5L</p>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="flex items-center text-xs text-emerald-600 bg-emerald-50 px-2 py-1 rounded"><ArrowUpRight size={12}/> In</span>
+            <span className="flex items-center text-xs text-[#15b515] bg-[#19d219]/10 px-2 py-1 rounded"><ArrowUpRight size={12}/> In</span>
             <span className="flex items-center text-xs text-red-600 bg-red-50 px-2 py-1 rounded"><ArrowDownRight size={12}/> Out</span>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default function Inventory() {
         <div className="p-4 border-b flex justify-between items-center bg-gray-50">
           <h3 className="font-semibold text-gray-700">Warehouse Stock</h3>
           <div className="flex gap-2">
-            <select className="border rounded-lg px-3 py-1.5 text-sm outline-none focus:border-emerald-500 text-gray-600">
+            <select className="border rounded-lg px-3 py-1.5 text-sm outline-none focus:border-[#19d219] text-gray-600">
               <option>All Categories</option>
               <option>Pipes</option>
               <option>Motors</option>
