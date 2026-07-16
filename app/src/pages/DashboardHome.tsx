@@ -52,6 +52,37 @@ export default function DashboardHome() {
           </div>
         </div>
       </div>
+
+      {/* Financial Revenue Chart */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+        <h3 className="text-lg font-bold text-gray-800 mb-6">Revenue Overview (Last 6 Months)</h3>
+        <div className="flex items-end justify-between h-48 gap-4 px-2">
+          <div className="flex flex-col items-center gap-2 flex-1">
+            <div className="w-full btn-gradient rounded-t-sm" style={{ height: '40%' }}></div>
+            <span className="text-xs font-bold text-gray-500">Jan</span>
+          </div>
+          <div className="flex flex-col items-center gap-2 flex-1">
+            <div className="w-full btn-gradient rounded-t-sm" style={{ height: '65%' }}></div>
+            <span className="text-xs font-bold text-gray-500">Feb</span>
+          </div>
+          <div className="flex flex-col items-center gap-2 flex-1">
+            <div className="w-full btn-gradient rounded-t-sm" style={{ height: '50%' }}></div>
+            <span className="text-xs font-bold text-gray-500">Mar</span>
+          </div>
+          <div className="flex flex-col items-center gap-2 flex-1">
+            <div className="w-full btn-gradient rounded-t-sm opacity-80" style={{ height: '80%' }}></div>
+            <span className="text-xs font-bold text-gray-500">Apr</span>
+          </div>
+          <div className="flex flex-col items-center gap-2 flex-1">
+            <div className="w-full btn-gradient rounded-t-sm" style={{ height: '95%' }}></div>
+            <span className="text-xs font-bold text-gray-500">May</span>
+          </div>
+          <div className="flex flex-col items-center gap-2 flex-1">
+            <div className="w-full btn-gradient rounded-t-sm" style={{ height: '100%' }}></div>
+            <span className="text-xs font-bold text-gray-800">Jun</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

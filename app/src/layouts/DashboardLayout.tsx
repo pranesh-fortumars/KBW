@@ -6,7 +6,9 @@ import {
   ClipboardList, 
   PackageSearch,
   IndianRupee,
-  Settings
+  Settings,
+  Search,
+  Bell
 } from 'lucide-react';
 
 export default function DashboardLayout() {
@@ -52,11 +54,29 @@ export default function DashboardLayout() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto bg-gray-50">
         <header className="bg-white shadow-sm h-16 flex items-center justify-between px-8">
-          <h2 className="text-xl font-bold text-gray-800 tracking-wide uppercase">Dashboard</h2>
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-bold text-gray-600">Welcome, Super Admin</span>
-            <div className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center text-white font-bold shadow-md">
-              SA
+          <div className="flex items-center gap-6">
+            <h2 className="text-xl font-bold text-gray-800 tracking-wide uppercase">Dashboard</h2>
+            <div className="hidden md:flex items-center bg-gray-100 rounded-lg px-3 py-1.5 border border-gray-200">
+              <Search size={18} className="text-gray-400" />
+              <input 
+                type="text" 
+                placeholder="Search leads, projects..." 
+                className="bg-transparent border-none outline-none text-sm ml-2 w-64 text-gray-700 placeholder-gray-400"
+              />
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-6">
+            <button className="relative text-gray-500 hover:text-[var(--accent)] transition-colors">
+              <Bell size={22} />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+            </button>
+            <div className="h-6 w-px bg-gray-200"></div>
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-bold text-gray-600">Welcome, Super Admin</span>
+              <div className="w-10 h-10 btn-gradient rounded-full flex items-center justify-center text-white font-bold shadow-md cursor-pointer hover:shadow-lg transition-all">
+                SA
+              </div>
             </div>
           </div>
         </header>
