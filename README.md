@@ -54,6 +54,7 @@ The entire application was completely overhauled from a generic "Corporate Slate
 - **Fonts:** Montserrat (Headings) & Roboto (Body)
 - **Primary Brand Colors:** Neon Green (`#19d219`), Gradient Pink (`#FF4F8B`), Gradient Purple (`#6C38FF`), and Teal (`#00C9A7`).
 - **Components:** Widespread use of gradient buttons, deep purple sidebars, and soft white transparencies.
+- **Animations:** Custom pure CSS `@keyframes` (`fade-in-up`) for seamless page transitions and interactive hover physics (`translate-y` lift) across all dashboard cards, maintaining blazing fast performance without heavy JS libraries.
 
 ## 💾 Database Strategy
 Currently, the entire frontend operates using sophisticated **JSON Mock Arrays** that behave exactly like a NoSQL database. 
